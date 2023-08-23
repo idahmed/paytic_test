@@ -9,7 +9,7 @@ class Document(models.Model):
         upload_to="documents/%Y/%m/%d",
         validators=[
             # only accept csv and txt
-            FileExtensionValidator(allowed_extensions=["csv", "txt"]),
+            FileExtensionValidator(allowed_extensions=["csv", "text"]),
             # limit file size in 10mib
             validate_file_size,
         ],
@@ -28,8 +28,8 @@ class Transaction(models.Model):
         related_name="transactions",
     )
     amount = models.IntegerField(null=False, blank=False)
-    merchant = models.CharField(max_length=255, null=False, blank=False)
-    country = models.CharField(max_length=255, null=False, blank=False)
+    merchant = models.IntegerField(null=False, blank=False)
+    country = models.IntegerField(null=False, blank=False)
     city = models.CharField(max_length=255, null=False, blank=False)
-    currency = models.CharField(max_length=255, null=False, blank=False)
+    currency = models.IntegerField(null=False, blank=False)
     trans_id = models.IntegerField(null=False, blank=False)
