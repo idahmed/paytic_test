@@ -6,20 +6,28 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('documents', '0001_initial'),
+        ("documents", "0001_initial"),
     ]
 
     operations = [
         migrations.RemoveField(
-            model_name='document',
-            name='file',
+            model_name="document",
+            name="file",
         ),
         migrations.AddField(
-            model_name='document',
-            name='path',
-            field=models.FileField(default=1, upload_to='documents/%Y/%m/%d', validators=[django.core.validators.FileExtensionValidator(allowed_extensions=['csv', 'text']), apps.documents.utils.validate_file_size]),
+            model_name="document",
+            name="path",
+            field=models.FileField(
+                default=1,
+                upload_to="documents/%Y/%m/%d",
+                validators=[
+                    django.core.validators.FileExtensionValidator(
+                        allowed_extensions=["csv", "text"]
+                    ),
+                    apps.documents.utils.validators.validate_file_size,
+                ],
+            ),
             preserve_default=False,
         ),
     ]

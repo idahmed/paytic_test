@@ -1,6 +1,6 @@
 from django.db import models
 from django.core.validators import FileExtensionValidator
-from apps.documents.utils import validate_file_size
+from apps.documents.utils.validators import validate_file_size
 
 
 class Document(models.Model):
@@ -17,6 +17,7 @@ class Document(models.Model):
         blank=False,
     )
     uploaded_at = models.DateTimeField(auto_now_add=True)
+    header = models.TextField(null=True, blank=True)
 
 
 class Transaction(models.Model):

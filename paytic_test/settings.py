@@ -137,3 +137,6 @@ REST_FRAMEWORK = {
         "rest_framework.parsers.MultiPartParser",  # This is for file uploads
     ),
 }
+
+# mongo db config
+MONGO_URI = "your_mongodb_url"
