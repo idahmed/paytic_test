@@ -3,7 +3,7 @@
 Clone the repository
 
 ```
-   git clone https://github.com/yourusername/your-django-app.git
+   git clone git@github.com:idahmed/paytic_test.git
 ```
 
 Navigate to the project directory
